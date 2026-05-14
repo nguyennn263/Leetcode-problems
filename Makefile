@@ -1,6 +1,8 @@
 .PHONY: build run test clean new debug
 
-CXX = g++
+# Auto-detect compiler
+CXX := $(shell command -v g++ || command -v clang++)
+
 CXXFLAGS = -std=c++17 -O2 -Wall
 
 BUILD_DIR = build
